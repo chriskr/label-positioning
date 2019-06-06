@@ -29,11 +29,33 @@ const Circle = styled.circle`
 `;
 
 const View = styled.div`
-  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+`;
+
+const H1 = styled.h1`
+  font-weight: 100;
+  margin: 0;
+
+  font-size: 1.5em;
+  color: hsla(30, 56%, 20%, 0.7);
+  padding: 16px 40px;
+  border-radius: 68px;
+  line-height: 1;
+  width: 858px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  font-stretch: expanded;
+  margin-bottom: 48px;
 `;
 
 const Container = styled.div`
   position: relative;
+  width: ${WIDTH}px;
   & circle,
   & .label {
     transition: opacity 0.25s;
@@ -65,15 +87,40 @@ const Label = styled.div`
 `;
 
 const Svg = styled.svg`
-  border: 1px solid hsla(0, 0%, 0%, 0.1);
+  height: ${HEIGHT}px;
+  width: ${WIDTH}px;
+  box-shadow: 0 0 0 12px hsl(30, 56%, 94%), 0 0 0 24px hsla(30, 56%, 20%, 0.15);
+  border-radius: 24px;
+  border: none;
 `;
 
 const Controls = styled.div`
-  margin-top: 100px;
+  margin-top: 52px;
+  color: hsla(30, 56%, 20%, 0.7);
 `;
 
 const InputLabel = styled.label`
   margin: 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+`;
+
+const Button = styled.button`
+  background: none;
+  border: 1px solid hsla(30, 56%, 20%, 0.3);
+  font: inherit;
+  line-height: 34px;
+  padding: 0 16px;
+  margin: 0 20px;
+  border-radius: 16px;
+  color: hsla(30, 56%, 20%, 0.7);
+  height: 34px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const getRandomLabel = () =>
@@ -138,6 +185,7 @@ class TestBubbleChart extends React.Component {
     };
     return (
       <View>
+        <H1>Bubble Chart Labels</H1>
         <Container
           ref={this.containerRef}
           isHover={this.state.hoverIndex > -1}
@@ -177,7 +225,6 @@ class TestBubbleChart extends React.Component {
           )}
         </Container>
         <Controls>
-          <button onClick={this.setExampleData}>Set example data</button>
           <InputLabel>bubble count</InputLabel>
           <Input
             value={this.state.bubbleCount}
@@ -192,6 +239,7 @@ class TestBubbleChart extends React.Component {
               })
             }
           />
+          <Button onClick={this.setExampleData}>Set example data</Button>
         </Controls>
       </View>
     );
