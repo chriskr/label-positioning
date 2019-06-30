@@ -75,15 +75,15 @@ const Container = styled.div`
 `;
 
 const Label = styled.div`
-  white-space: nowrap;
-  position: absolute;
-  top: 0;
-  left: 0;
-  line-height: 1;
+  cursor: pointer;
   font-size: 10px;
   font-weight: 300;
-  pointer-events: none;
+  left: 0;
+  line-height: 1;
+  position: absolute;
   text-align: center;
+  top: 0;
+  white-space: nowrap;
 `;
 
 const Svg = styled.svg`
@@ -168,7 +168,7 @@ class TestBubbleChart extends React.Component {
   };
   hanleMouseOver = throttle(() => {
     if (!this._event) return;
-    const circle = this._event.target.closest('circle');
+    const circle = this._event.target.closest('circle, .label');
     if (circle !== this.hoverCircle) {
       this.hoverCircle = circle;
       const hoverIndex = circle
@@ -206,23 +206,25 @@ class TestBubbleChart extends React.Component {
               }
             )}
           </Svg>
-          {this.state.data.map(
-            ({ label: { label, top, left }, radius }, index) => {
-              const style = {
-                left: `${left}px`,
-                top: `${top}px`,
-                fontSize: `${getFontSize(radius)}px`,
-              };
-              if (index === this.state.hoverIndex) {
-                style.opacity = 1;
+          <div>
+            {this.state.data.map(
+              ({ label: { label, top, left }, radius }, index) => {
+                const style = {
+                  left: `${left}px`,
+                  top: `${top}px`,
+                  fontSize: `${getFontSize(radius)}px`,
+                };
+                if (index === this.state.hoverIndex) {
+                  style.opacity = 1;
+                }
+                return (
+                  <Label style={style} className="label">
+                    {label}
+                  </Label>
+                );
               }
-              return (
-                <Label style={style} className="label">
-                  {label}
-                </Label>
-              );
-            }
-          )}
+            )}
+          </div>
         </Container>
         <Controls>
           <InputLabel>bubble count</InputLabel>

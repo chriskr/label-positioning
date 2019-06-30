@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/label-positioning/build/static/css/main.94b338ec.chunk.css",
-    "main.js": "/label-positioning/build/static/js/main.23488e40.chunk.js",
-    "main.js.map": "/label-positioning/build/static/js/main.23488e40.chunk.js.map",
+    "main.js": "/label-positioning/build/static/js/main.6d2ce8e2.chunk.js",
+    "main.js.map": "/label-positioning/build/static/js/main.6d2ce8e2.chunk.js.map",
     "runtime~main.js": "/label-positioning/build/static/js/runtime~main.8226b44f.js",
     "runtime~main.js.map": "/label-positioning/build/static/js/runtime~main.8226b44f.js.map",
     "static/js/2.5c9bc1aa.chunk.js": "/label-positioning/build/static/js/2.5c9bc1aa.chunk.js",
     "static/js/2.5c9bc1aa.chunk.js.map": "/label-positioning/build/static/js/2.5c9bc1aa.chunk.js.map",
     "index.html": "/label-positioning/build/index.html",
-    "precache-manifest.c53598f8f9c440bd12add6344dc8b719.js": "/label-positioning/build/precache-manifest.c53598f8f9c440bd12add6344dc8b719.js",
+    "precache-manifest.38d9c5c4cd6bb8371dcd9507bf20f903.js": "/label-positioning/build/precache-manifest.38d9c5c4cd6bb8371dcd9507bf20f903.js",
     "service-worker.js": "/label-positioning/build/service-worker.js",
     "static/css/main.94b338ec.chunk.css.map": "/label-positioning/build/static/css/main.94b338ec.chunk.css.map"
   }
